@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800">
+    <header class="bg-black py-4">
+        <nav class="max-w-screen-xl mx-auto flex items-center justify-between px-6">
+            <div class="flex items-center space-x-4 sm:space-x-8">
+                <a class="text-white text-xl font-semibold" href="#">Uber</a>
+                <ul id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-8 text-white">
+                    <li><a href="Index.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Home</a></li>
+                    <li><a href="Biodata.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Bio data</a></li>
+                    <li><a href="contact_us.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Contact Us</a></li>
+                    <li><a href="FreePage.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Additional</a></li>
+                    <li><a href="about.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Free Content</a></li>
+                </ul>
+            </div>
+            <div id="desktop-auth" class="hidden sm:flex items-center space-x-4 sm:space-x-6">
+                <a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Help</a>
+                <a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Log in</a>
+                <a href="#" class="bg-white text-black font-semibold rounded-full py-2 px-4 hover:bg-gray-100">Sign up</a>
+            </div>
+            <button id="menu-toggle" class="sm:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav> 
+        <ul id="mobile-menu" class="hidden flex flex-col space-y-4 text-white px-6 py-4">
+            <li><a href="Index.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Home</a></li>
+            <li><a href="Biodata.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Bio data</a></li>
+            <li><a href="contact_us.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Contact Us</a></li>
+            <li><a href="FreePage.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Additional</a></li>
+            <li><a href="about.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Free Content</a></li>
+            <li><a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Help</a></li>
+            <li><a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Log in</a></li>
+            <li><a href="#" class="bg-white text-black font-semibold rounded-full py-2 px-4 hover:bg-gray-100">Sign up</a></li>
+        </ul>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('block');
+            } else {
+                mobileMenu.classList.remove('block');
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <div class="container m-16 mx-auto p-4 md:p-6 lg:p-8">
+        <div class="flex flex-col items-center justify-center h-screen">
+            <div class="bg-white rounded-lg shadow-md p-4 md:p-6 lg:p-8 w-full md:w-1/2 lg:w-1/3">
+                <h2 class="text-2xl font-bold mb-2">Student Registration Form</h2>
+                <form id="registration-form">
+                    <div class="mb-4">
+                        <label for="full-name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="student-id" class="block text-gray-700 text-sm font-bold mb-2">Student ID (NIM)</label>
+                        <input type="text" id="student-id" name="student-id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="faculty" class="block text-gray-700 text-sm font-bold mb-2">Faculty/Major</label>
+                        <select id="faculty" name="faculty" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                            <option value="">Select Faculty/Major</option>
+                            <option value="Teknik Informatika">Teknik Informatika</option>
+                            <option value="Sistem Informasi">Sistem Informasi</option>
+                            <option value="Teknik Elektro">Teknik Elektro</option>
+                            <option value="Teknik Sipil">Teknik Sipil</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="date-of-birth" class="block text-gray-700 text-sm font-bold mb-2">Date of Birth</label>
+                        <input type="date" id="date-of-birth" name="date-of-birth" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="gender" class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
+                        <div class="flex items-center">
+                            <input type="radio" id="male" name="gender" value="Male" class="mr-2" required>
+                            <label for="male" class="text-gray-700 text-sm font-bold">Male</label>
+                            <input type="radio" id="female" name="gender" value="Female" class="ml-4 mr-2" required>
+                            <label for="female" class="text-gray-700 text-sm font-bold">Female</label>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address</label>
+                        <textarea id="address" name="address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone-number" class=" block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                        <input type="text" id="phone-number" name="phone-number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        const fullNameInput = document.getElementById('full-name');
+        const studentIdInput = document.getElementById('student-id');
+        const emailInput = document.getElementById('email');
+        const facultySelect = document.getElementById('faculty');
+        const dateOfBirthInput = document.getElementById('date-of-birth');
+        const genderRadio = document.querySelectorAll('input[name="gender"]');
+        const addressTextarea = document.getElementById('address');
+        const phoneNumberInput = document.getElementById('phone-number');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (fullNameInput.value === '') {
+                alert('Please fill in your full name');
+                return;
+            }
+
+            if (studentIdInput.value === '') {
+                alert('Please fill in your student ID');
+                return;
+            }
+
+            if (emailInput.value === '') {
+                alert('Please fill in your email address');
+                return;
+            }
+
+            if (facultySelect.value === '') {
+                alert('Please select your faculty/major');
+                return;
+            }
+
+            if (dateOfBirthInput.value === '') {
+                alert('Please fill in your date of birth');
+                return;
+            }
+
+            if (!genderRadio[0].checked && !genderRadio[1].checked) {
+                alert('Please select your gender');
+                return;
+            }
+
+            if (addressTextarea.value === '') {
+                alert('Please fill in your address');
+                return;
+            }
+
+            if (phoneNumberInput.value === '') {
+                alert('Please fill in your phone number');
+                return;
+            }
+
+            if (!/^\d+$/.test(phoneNumberInput.value)) {
+                alert('Please enter a valid phone number');
+                return;
+            }
+
+            alert('Form submitted successfully!');
+            form.reset();
+        });
+    </script>
+
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="block text-center md:text-left">
+                <h1 class="text-3xl font-normal pt-12 pb-7">Uber</h1>
+                <a href="#" class="text-base pb-10 border-b-2 border-black hover:border-white">Visit Help Center</a>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Company</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">About us</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Our offerings</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Newsroom</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Investors</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Blog</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Careers</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Uber AI</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Products</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Ride</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Drive</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Deliver</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Eat</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Uber for Business</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Uber Freight</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Global Citizenship</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Safety</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Diversity and Inclusion</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Travel</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Reserve</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Cities</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16">
+                <div class="flex flex-wrap justify-between items-center">
+                    <ul class="flex flex-wrap justify-center md:justify-start gap-4 mb-4 md:mb-0">
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="white" d="M0 12.923V1.077A1.077 1.077 0 0 1 1.077 0h11.846A1.077 1.077 0 0 1 14 1.077v11.846A1.077 1.077 0 0 1 12.923 14h-3.23V8.895h.764a.657.657 0 0 0 .657-.657V7.41a.655.655 0 0 0-.657-.657h-.722V5.74c0-.905.41-.905.819-.905h.527a.6.6 0 0 0 .464-.193a.63.63 0 0 0 .194-.464v-.796a.67.67 0 0 0-.647-.69H9.854a2.498 2.498 0 0 0-2.574 2.8v1.26h-.69a.657.657 0 0 0-.667.657v.83a.657.657 0 0 0 .668.656h.689V14H1.077A1.077 1.077 0 0 1 0 12.923"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="m17.687 3.063l-4.996 5.711l-4.32-5.711H2.112l7.477 9.776l-7.086 8.099h3.034l5.469-6.25l4.78 6.25h6.102l-7.794-10.304l6.625-7.571zm-1.064 16.06L5.654 4.782h1.803l10.846 14.34z"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="white" d="M61.7 17.1c-.7-2.7-2.8-4.8-5.5-5.5c-4.8-1.3-24.2-1.3-24.2-1.3s-19.4 0-24.2 1.3c-2.7.7-4.8 2.8-5.5 5.5C1 22 1 32 1 32s0 10.1 1.3 14.9c.7 2.7 2.8 4.8 5.5 5.5c4.8 1.3 24.2 1.3 24.2 1.3s19.4 0 24.2-1.3c2.7-.7 4.8-2.8 5.5-5.5C63 42.1 63 32 63 32s0-10-1.3-14.9M25.8 41.3V22.7L41.9 32z"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"/></g></svg></a></li>
+                    </ul>
+                    <ul class="flex flex-wrap gap-4">
+                        <li class="flex items-center">
+                            <a href="#" class="flex items-center hover:bg-gray-500 rounded-lg p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20"/>
+                                    </g>
+                                </svg>
+                                <span class="ml-2">English(International)</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="#" class="flex items-center hover:bg-gray-500 rounded-lg p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
+                                    <path fill="white" fill-rule="evenodd" d="M5.05 4.05a7 7 0 1 1 9.9 9.9L10 18.9l-4.95-4.95a7 7 0 0 1 0-9.9M10 11a2 2 0 1 0 0-4a2 2 0 0 0 0 4" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="ml-2">San Francisco Bay Area</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-wrap justify-center md:justify-between items-center">
+                <div class="flex gap-4">
+                    <a href="#"><img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg" alt="Download di Android" class="h-10"></a>
+                    <a href="#"><img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-apple-f1f919205b.svg" alt="Download di IOS" class="h-10"></a>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-wrap justify-between items-center text-gray-400 text-xs">
+                <div>© 2024 Uber Technologies Inc.</div>
+                <div class="flex space-x-4">
+                    <a href="https://fti.unai.edu/" class="hover:text-gray-700">FTI UNAI</a>
+                    <a href="https://unai.edu/" class="hover:text-gray-700">Unai Website</a>
+                    <a href="https://jurnal.unai.edu/index.php/teika" class="hover:text-gray-700">Jurnal Teika</a>
+                </div>
+            </div>
+        </div>
+    </footer>  
+</body>
+</html>
