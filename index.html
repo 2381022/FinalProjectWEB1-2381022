@@ -10,9 +10,9 @@
 <body class="bg-white-100">
     <header class="bg-black py-4">
         <nav class="max-w-screen-xl mx-auto flex items-center justify-between px-6">
-            <div class="flex items-center space-x-8">
-                <a class="text-white text-xl font-semibold font-[]" href="#">Uber</a>
-                <ul class="flex space-x-8 text-white">
+            <div class="flex items-center space-x-4 sm:space-x-8">
+                <a class="text-white text-xl font-semibold" href="#">Uber</a>
+                <ul id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-8 text-white">
                     <li><a href="Index.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Home</a></li>
                     <li><a href="Biodata.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Bio data</a></li>
                     <li><a href="contact_us.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Contact Us</a></li>
@@ -20,234 +20,268 @@
                     <li><a href="about.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Free Content</a></li>
                 </ul>
             </div>
-            <div class="flex items-center space-x-6">
+            <div id="desktop-auth" class="hidden sm:flex items-center space-x-4 sm:space-x-6">
                 <a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Help</a>
                 <a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Log in</a>
-                <a href="#" class="bg-white text-black font-semibold rounded-full py-2 px-4 hover:bg-gray-100">
-                    Sign up
-                </a>
+                <a href="#" class="bg-white text-black font-semibold rounded-full py-2 px-4 hover:bg-gray-100">Sign up</a>
             </div>
-        </nav>
+            <button id="menu-toggle" class="sm:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav> 
+        <ul id="mobile-menu" class="hidden flex flex-col space-y-4 text-white px-6 py-4">
+            <li><a href="Index.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Home</a></li>
+            <li><a href="Biodata.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Bio data</a></li>
+            <li><a href="contact_us.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Contact Us</a></li>
+            <li><a href="FreePage.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Additional</a></li>
+            <li><a href="about.html" class="hover:bg-gray-800 rounded-full px-4 py-2">Free Content</a></li>
+            <li><a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Help</a></li>
+            <li><a href="#" class="text-white hover:bg-gray-800 rounded-full px-4 py-2">Log in</a></li>
+            <li><a href="#" class="bg-white text-black font-semibold rounded-full py-2 px-4 hover:bg-gray-100">Sign up</a></li>
+        </ul>
     </header>
-    <div class="bg-[url('https://c0.wallpaperflare.com/preview/278/766/365/russia-moscow-road-dark.jpg')] h-[80vh] block">
-        <h1 class="text-white text-8xl text-center pt-56">WELCOME TO MY WEBSITE</h1>
-        <p class="text-white text-4xl text-center">This is my Final Project Website for WEB 1 Courses</p>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('block');
+            } else {
+                mobileMenu.classList.remove('block');
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+    
+    <div class="bg-[url('https://c0.wallpaperflare.com/preview/278/766/365/russia-moscow-road-dark.jpg')] bg-cover bg-center h-[80vh] flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-white text-4xl sm:text-6xl lg:text-8xl font-bold">
+            WELCOME TO MY WEBSITE
+        </h1>
+        <p class="text-white text-lg sm:text-2xl lg:text-4xl mt-4">
+            This is my Final Project Website for WEB 1 Courses
+        </p>
     </div>
-
-    <section class="py-14 flex justify-start">
-        <div class="max-w-md w-full px-6 ml-[20vh]">
-            <h3 class="text-4xl font-bold mb-6">Suggestions</h3>
-            <a href="#">
-            <div class="flex items-center bg-gray-100 rounded-lg p-4 shadow-md">
-                <div class="pr-4">
-                    <h4 class="font-medium text-lg">Ride</h4>
-                    <p class="text-sm mt-2 mb-4">Go anywhere with Uber. Request a ride, hop in, and go.</p>
-                    <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-300 font-semibold">Details</button>
+    
+    <section class="py-14 flex justify-start px-4">
+        <div class="max-w-md w-full sm:ml-[20vh]">
+            <h3 class="text-4xl font-bold mb-8">Suggestions</h3>
+            <a href="#" class="block">
+                <div class="flex flex-col sm:flex-row items-center bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex-1 pr-0 sm:pr-4 mb-4 sm:mb-0">
+                        <h4 class="font-medium text-lg">Ride</h4>
+                        <p class="text-sm mt-2 mb-4">Go anywhere with Uber. Request a ride, hop in, and go.</p>
+                        <button class="px-4 py-2 bg-white border border-gray-300 rounded-full hover:bg-gray-300 font-semibold transition-colors">
+                            Details
+                        </button>
+                    </div>
+                    <img src="https://mobile-content.uber.com/launch-experience/ride.png" alt="car" class="h-32 w-32 object-contain">
                 </div>
-                <img src="https://mobile-content.uber.com/launch-experience/ride.png" alt="car" class="h-32 w-32">
-            </div>
             </a>
         </div>
-    </section>
+    </section>    
 
-    <section class="py-14 px-20">
-        <div class="flex items-center gap-10 max-w-screen-xl mx-auto">
+    <section class="py-14 px-6 sm:px-20">
+        <div class="flex flex-col lg:flex-row items-center gap-10 max-w-screen-xl mx-auto">
             <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_552,w_552/v1684855112/assets/96/4dd3d1-94e7-481e-b28c-08d59353b9e0/original/earner-illustra.png" 
-                alt="Nikmati uber dimana saja" 
-                class="h-100 w-100 rounded-lg shadow-lg ml-[8vh] mr-[15vh]">
-            <div class="flex flex-col mr-[15vh]">
-                <h1 class="text-5xl font-bold mb-5 leading-snug">Drive when you want, make what you need</h1>
-                <p class="text-gray-800 text-base mb-6 leading-relaxed">
-                    Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through Uber.
-                </p>
-                <div class="flex">
-                    <a href="#" class="inline-block mb-4 bg-black text-white py-3 px-8 rounded-lg font-medium hover:bg-gray-800 transition duration-300">Get started</a>
-                    <a href="#" class="text-gray-700 underline ml-5 mt-2 hover:text-gray-900">Already have an account? Sign in</a>
+                alt="Nikmati Uber di mana saja" 
+                class="h-60 w-60 sm:h-80 sm:w-80 lg:h-auto lg:w-auto rounded-lg shadow-lg lg:ml-[8vh] lg:mr-[15vh]">
+            <div class="flex flex-col text-center lg:text-left lg:mr-[15vh]">
+                <h1 class="text-3xl sm:text-5xl font-bold mb-5 leading-snug">Drive when you want, make what you need</h1>
+                <p class="text-gray-800 text-base sm:text-lg mb-6 leading-relaxed">Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through Uber.</p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start">
+                    <a href="#" class="inline-block mb-4 sm:mb-0 bg-black text-white py-3 px-8 rounded-lg font-medium hover:bg-gray-800 transition duration-300">Get started</a>
+                    <a href="#" class="text-gray-700 underline pt-2.5 sm:ml-5 mt-2 sm:mt-0 hover:text-gray-900">Already have an account? Sign in</a>
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
 
-    <section class="py-14 px-20">
-        <div class="flex items-center gap-10 max-w-screen-xl mx-auto">
-            <div class="flex flex-col mr-[5vh] ml-[8vh]">
-                <h1 class="text-5xl font-bold mb-5 leading-snug">The Uber you know, reimagined for business</h1>
-                <p class="text-gray-800 text-base mb-6 leading-relaxed">
-                    Uber for Business is a platform for managing global rides and meals, and local deliveries, for companies of any size.
-                </p>
-                <div class="flex">
-                    <a href="#" class="inline-block mb-4 bg-black text-white py-3 px-8 rounded-lg font-medium hover:bg-gray-800 transition duration-300">Get started</a>
-                    <a href="#" class="text-gray-700 underline ml-5 mt-2 hover:text-gray-900">Already have an account? Sign in</a>
+    <section class="py-14 px-6 sm:px-20">
+        <div class="flex flex-col lg:flex-row items-center gap-10 max-w-screen-xl mx-auto">
+            <div class="flex flex-col lg:mr-[5vh] lg:ml-[8vh] text-center lg:text-left">
+                <h1 class="text-3xl sm:text-5xl font-bold mb-5 leading-snug">The Uber you know, reimagined for business</h1>
+                <p class="text-gray-800 text-base sm:text-lg mb-6 leading-relaxed">Uber for Business is a platform for managing global rides and meals, and local deliveries, for companies of any size.</p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start">
+                    <a href="#" class="inline-block mb-4 sm:mb-0 bg-black text-white py-3 px-8 rounded-lg font-medium hover:bg-gray-800 transition duration-300">Get started</a>
+                    <a href="#" class="text-gray-700 underline pt-2.5 sm:ml-5 mt-2 sm:mt-0 hover:text-gray-900">Already have an account? Sign in</a>
                 </div>
             </div>
             <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_552,w_552/v1684887108/assets/76/baf1ea-385a-408c-846b-59211086196c/original/u4b-square.png" 
-            alt="uber untuk bisnis" 
-            class="h-100 w-100 rounded-lg shadow-lg ml-[8vh] mr-[15vh]">
+                alt="Uber untuk bisnis" 
+                class="h-60 w-60 sm:h-80 sm:w-80 lg:h-auto lg:w-auto rounded-lg shadow-lg lg:ml-[8vh] lg:mr-[15vh]">
         </div>
     </section>
-
-    <section class="py-14 px-20">
-        <div class="flex items-center gap-10 max-w-screen-xl mx-auto">
+    
+    <section class="py-14 px-6 sm:px-20">
+        <div class="flex flex-col lg:flex-row items-center gap-10 max-w-screen-xl mx-auto">
             <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_1072,w_1072/v1733424338/assets/2b/aeac64-36c8-4ecf-b569-bb8d6ecbd232/original/uber-gift-cards-newest.jpg" 
                 alt="Uber Gift" 
-                class="h-[80vh] w-[80vh] rounded-lg shadow-lg ml-[8vh] mr-[15vh]">
-            <div class="flex flex-col mr-[15vh]">
-                <h1 class="text-4xl font-bold mb-5 leading-snug">Give the gift of Uber</h1>
-                <p class="text-gray-800 text-base mb-6 leading-relaxed">
-                    Send a digital Uber gift card in minutes, and make someone's day. They can use it for rides, deliveries, and almost anything in between.
-                </p>
+                class="h-60 w-60 sm:h-80 sm:w-80 lg:h-[80vh] lg:w-[80vh] rounded-lg shadow-lg lg:ml-[8vh] lg:mr-[15vh]">
+            <div class="flex flex-col text-center lg:text-left lg:mr-[15vh]">
+                <h1 class="text-3xl sm:text-4xl font-bold mb-5 leading-snug">Give the gift of Uber</h1>
+                <p class="text-gray-800 text-base sm:text-lg mb-6 leading-relaxed">Send a digital Uber gift card in minutes, and make someone's day. They can use it for rides, deliveries, and almost anything in between.</p>
                 <div>
                     <a href="#" class="inline-block mb-4 bg-black text-white py-3 px-8 rounded-lg font-medium hover:bg-gray-800 transition duration-300">Buy gift cards</a>
                 </div>
             </div>
         </div>
     </section>
-
     
-    <section class="py-14 px-20">
-        <div class="flex items-center gap-10 max-w-screen-xl mx-auto">
-            <div class="flex flex-col mr-[5vh] ml-[8vh]">
-                <h1 class="text-3xl font-bold mb-5 leading-snug">Save on Uber and Uber Eats with Uber One membership</h1>
-                <p class="text-gray-800 text-base mb-6 leading-relaxed">
-                    Become an Uber One member for savings and exclusive perks on Uber and Uber Eats.</p>
-                <p class="text-gray-800 text-base mb-6 leading-relaxed">Sign up for just $9.99/month.</p>
+    <section class="py-14 px-6 sm:px-20">
+        <div class="flex flex-col lg:flex-row items-center gap-10 max-w-screen-xl mx-auto">
+            <div class="flex flex-col text-center lg:text-left lg:mr-[5vh] lg:ml-[8vh]">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-5 leading-snug">Save on Uber and Uber Eats with Uber One membership</h1>
+                <p class="text-gray-800 text-base sm:text-lg mb-6 leading-relaxed">Become an Uber One member for savings and exclusive perks on Uber and Uber Eats.</p>
+                <p class="text-gray-800 text-base sm:text-lg mb-6 leading-relaxed">Sign up for just $9.99/month.</p>
                 <div>
                     <a href="#" class="inline-block mb-4 bg-black text-white py-3 px-8 rounded-lg font-medium hover:bg-gray-800 transition duration-300">Get started</a>
                 </div>
             </div>
             <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_576,w_576/v1696243800/assets/62/3b076a-3406-4f3b-89de-2cf1a2ccb907/original/uber-one.jpg" 
-            alt="uber membership" 
-            class="h-[80vh] w-[80vh] rounded-lg shadow-lg ml-[8vh] mr-[15vh]">
+                alt="Uber membership" 
+                class="h-60 w-60 sm:h-80 sm:w-80 lg:h-[80vh] lg:w-[80vh] rounded-lg shadow-lg lg:ml-[8vh] lg:mr-[15vh]">
         </div>
     </section>
 
-        <section class="bg-gray-100">
-            <div class="container mx-auto py-12">
-                <h2 class="text-4xl font-bold mb-6">It's easier in the apps</h2>
-
-                <div class="flex gap-6">
-                    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6">
-                        <a href="#" class="scan1 flex items-center p-4">
-                            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_auto/v1690807720/assets/a5/9986ad-0d9f-4396-8539-389bce97f579/original/Final-Download-Uber-App.png" alt="Download aplikasi uber" class="w-40 h-40">
-                            <div class="block ml-5 mr-[12vh]">
-                                <h3 class="text-2xl font-bold text-center ">Download the Uber app</h3>
-                                <p class="text-gray-600">Scan to download</p>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" class="mt-2"><path fill="black" d="M315.1 48.6H196.9l157.6 157.5H0v78.8h354.5L196.9 442.4h118.2L512 245.5z"/></svg>
-                        </a>
-                    </div>
-
-                    <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-6">
-                        <a href="#" class="scan2 flex items-center p-4">
-                            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_auto/v1690803624/assets/50/e85531-2f7e-4ee7-92d4-e39a6801ee2b/original/QR_https___t.uber.com_download-driver-app.png" alt="Download aplikasi supir" class="w-40 h-40">
-                            <div class="block ml-5 mr-[12vh]">
-                                <h3 class="text-xl font-bold text-center mb-2">Download the Driver app</h3>
-                                <p class="text-gray-600 text-center">Scan to download</p>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" class="mt-2"><path fill="black" d="M315.1 48.6H196.9l157.6 157.5H0v78.8h354.5L196.9 442.4h118.2L512 245.5z"/></svg>
-                        </a>
-                    </div>
+    <section class="bg-gray-100">
+        <div class="container mx-auto py-12 px-4 sm:px-8">
+            <h2 class="text-2xl sm:text-4xl font-bold mb-8 text-center sm:text-left">It's easier in the apps</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md">
+                    <a href="#" class="scan1 flex flex-col sm:flex-row items-center p-4">
+                        <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_auto/v1690807720/assets/a5/9986ad-0d9f-4396-8539-389bce97f579/original/Final-Download-Uber-App.png" 
+                             alt="Download aplikasi uber" 
+                             class="w-32 h-32 sm:w-40 sm:h-40">
+                        <div class="block ml-0 sm:ml-5 mt-4 sm:mt-0 text-center sm:text-left">
+                            <h3 class="text-xl sm:text-2xl font-bold">Download the Uber app</h3>
+                            <p class="text-gray-600">Scan to download</p>
+                        </div>
+                        <svg class="transition duration-300 hover:translate-x-2/3 mt-4 sm:mt-0 sm:ml-auto" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512">
+                            <path fill="black" d="M315.1 48.6H196.9l157.6 157.5H0v78.8h354.5L196.9 442.4h118.2L512 245.5z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 bg-white rounded-lg shadow-md">
+                    <a href="#" class="scan2 flex flex-col sm:flex-row items-center p-4">
+                        <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_auto/v1690803624/assets/50/e85531-2f7e-4ee7-92d4-e39a6801ee2b/original/QR_https___t.uber.com_download-driver-app.png" 
+                             alt="Download aplikasi supir" 
+                             class="w-32 h-32 sm:w-40 sm:h-40">
+                        <div class="block ml-0 sm:ml-5 mt-4 sm:mt-0 text-center sm:text-left">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-2">Download the Driver app</h3>
+                            <p class="text-gray-600">Scan to download</p>
+                        </div>
+                        <svg class="transition duration-300 hover:translate-x-2/3 mt-4 sm:mt-0 sm:ml-auto" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512">
+                            <path fill="black" d="M315.1 48.6H196.9l157.6 157.5H0v78.8h354.5L196.9 442.4h118.2L512 245.5z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
 
-        <footer class="bg-black text-white">
-            <div class="container mx-auto px-4 py-12">
-                <div class="block">
-                    <h1 class="text-3xl font-normal pt-12 pb-7">Uber</h1>
-                    <a href="#" class="text-sm pb-10 border-b-2 border-white">Visit Help Center</a>
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-4 py-12">
+            <!-- Header Section -->
+            <div class="block text-center md:text-left">
+                <h1 class="text-3xl font-normal pt-12 pb-7">Uber</h1>
+                <a href="#" class="text-base pb-10 border-b-2 border-black hover:border-white">Visit Help Center</a>
+            </div>
+    
+            <!-- Grid Content -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Company</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">About us</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Our offerings</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Newsroom</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Investors</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Blog</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Careers</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Uber AI</a></li>
+                    </ul>
                 </div>
-        
-                <div class="mt-16 grid grid-cols-4 gap-8">
-                    <div>
-                        <h2 class="text-xl font-bold pb-3">Company</h2>
-                        <ul>
-                            <li class="pb-3"><a href="#" class="hover:underline">About us</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Our offerings</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Newsroom</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Investors</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Blog</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Careers</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Uber AI</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-bold pb-3">Products</h2>
-                        <ul>
-                            <li class="pb-3"><a href="#" class="hover:underline">Ride</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Drive</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Deliver</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Eat</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Uber for Business</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Uber Freight</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Gift Cards</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-bold pb-3">Global Citizenship</h2>
-                        <ul>
-                            <li class="pb-3"><a href="#" class="hover:underline">Safety</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Diversity and Inclusion</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Sustainability</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-bold pb-3">Travel</h2>
-                        <ul>
-                            <li class="pb-3"><a href="#" class="hover:underline">Reserve</a></li>
-                            <li class="pb-3"><a href="#" class="hover:underline">Cities</a></li>
-                        </ul>
-                    </div>
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Products</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Ride</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Drive</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Deliver</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Eat</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Uber for Business</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Uber Freight</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Gift Cards</a></li>
+                    </ul>
                 </div>
-        
-                <div class="mt-16">
-                    <div class="flex justify-between items-center">
-                        <ul class="flex">
-                            <li class="pr-[12vh]"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="white" d="M0 12.923V1.077A1.077 1.077 0 0 1 1.077 0h11.846A1.077 1.077 0 0 1 14 1.077v11.846A1.077 1.077 0 0 1 12.923 14h-3.23V8.895h.764a.657.657 0 0 0 .657-.657V7.41a.655.655 0 0 0-.657-.657h-.722V5.74c0-.905.41-.905.819-.905h.527a.6.6 0 0 0 .464-.193a.63.63 0 0 0 .194-.464v-.796a.67.67 0 0 0-.647-.69H9.854a2.498 2.498 0 0 0-2.574 2.8v1.26h-.69a.657.657 0 0 0-.667.657v.83a.657.657 0 0 0 .668.656h.689V14H1.077A1.077 1.077 0 0 1 0 12.923"/></svg></a></li>
-                            <li class="pr-[12vh]"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="m17.687 3.063l-4.996 5.711l-4.32-5.711H2.112l7.477 9.776l-7.086 8.099h3.034l5.469-6.25l4.78 6.25h6.102l-7.794-10.304l6.625-7.571zm-1.064 16.06L5.654 4.782h1.803l10.846 14.34z"/></svg></a></li>
-                            <li class="pr-[12vh]"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="white" d="M61.7 17.1c-.7-2.7-2.8-4.8-5.5-5.5c-4.8-1.3-24.2-1.3-24.2-1.3s-19.4 0-24.2 1.3c-2.7.7-4.8 2.8-5.5 5.5C1 22 1 32 1 32s0 10.1 1.3 14.9c.7 2.7 2.8 4.8 5.5 5.5c4.8 1.3 24.2 1.3 24.2 1.3s19.4 0 24.2-1.3c2.7-.7 4.8-2.8 5.5-5.5C63 42.1 63 32 63 32s0-10-1.3-14.9M25.8 41.3V22.7L41.9 32z"/></svg></a></li>
-                            <li class="pr-[12vh]"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg></a></li>
-                            <li class="pr-[12vh]"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"/></g></svg></a></li>
-                        </ul>
-                        <ul class="flex space-x-4">
-                            <li class="flex items-center">
-                                <a href="#" class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"/>
-                                            <path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20"/>
-                                        </g>
-                                    </svg>
-                                    <span class="ml-2">English(International)</span>
-                                </a>
-                            </li>
-                            <li class="flex items-center">
-                                <a href="#" class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
-                                        <path fill="white" fill-rule="evenodd" d="M5.05 4.05a7 7 0 1 1 9.9 9.9L10 18.9l-4.95-4.95a7 7 0 0 1 0-9.9M10 11a2 2 0 1 0 0-4a2 2 0 0 0 0 4" clip-rule="evenodd"/>
-                                    </svg>
-                                    <span class="ml-2">San Francisco Bay Area</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Global Citizenship</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Safety</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Diversity and Inclusion</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Sustainability</a></li>
+                    </ul>
                 </div>
-        
-                <div class="mt-8 flex justify-between items-center">
-                    <div class="flex space-x-4">
-                        <a href="#"><img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg" alt="Download di Android" class="h-10"></a>
-                        <a href="#"><img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-apple-f1f919205b.svg" alt="Download di IOS" class="h-10"></a>
-                    </div>
-                </div>
-                <div class="mt-8 flex justify-between items-center text-gray-400 text-xs">
-                    <div>© 2024 Uber Technologies Inc.</div>
-                    <div class="flex space-x-4">
-                        <a href="https://fti.unai.edu/" class="hover:underline">FTI UNAI</a>
-                        <a href="https://unai.edu/" class="hover:underline">Unai Website</a>
-                        <a href="https://jurnal.unai.edu/index.php/teika" class="hover:underline">Jurnal Teika</a>
-                    </div>
+                <div>
+                    <h2 class="text-xl font-bold pb-3">Travel</h2>
+                    <ul>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Reserve</a></li>
+                        <li class="pb-3"><a href="#" class="hover:text-gray-400">Cities</a></li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+            <div class="mt-16">
+                <div class="flex flex-wrap justify-between items-center">
+                    <ul class="flex flex-wrap justify-center md:justify-start gap-4 mb-4 md:mb-0">
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="white" d="M0 12.923V1.077A1.077 1.077 0 0 1 1.077 0h11.846A1.077 1.077 0 0 1 14 1.077v11.846A1.077 1.077 0 0 1 12.923 14h-3.23V8.895h.764a.657.657 0 0 0 .657-.657V7.41a.655.655 0 0 0-.657-.657h-.722V5.74c0-.905.41-.905.819-.905h.527a.6.6 0 0 0 .464-.193a.63.63 0 0 0 .194-.464v-.796a.67.67 0 0 0-.647-.69H9.854a2.498 2.498 0 0 0-2.574 2.8v1.26h-.69a.657.657 0 0 0-.667.657v.83a.657.657 0 0 0 .668.656h.689V14H1.077A1.077 1.077 0 0 1 0 12.923"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="m17.687 3.063l-4.996 5.711l-4.32-5.711H2.112l7.477 9.776l-7.086 8.099h3.034l5.469-6.25l4.78 6.25h6.102l-7.794-10.304l6.625-7.571zm-1.064 16.06L5.654 4.782h1.803l10.846 14.34z"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="white" d="M61.7 17.1c-.7-2.7-2.8-4.8-5.5-5.5c-4.8-1.3-24.2-1.3-24.2-1.3s-19.4 0-24.2 1.3c-2.7.7-4.8 2.8-5.5 5.5C1 22 1 32 1 32s0 10.1 1.3 14.9c.7 2.7 2.8 4.8 5.5 5.5c4.8 1.3 24.2 1.3 24.2 1.3s19.4 0 24.2-1.3c2.7-.7 4.8-2.8 5.5-5.5C63 42.1 63 32 63 32s0-10-1.3-14.9M25.8 41.3V22.7L41.9 32z"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg></a></li>
+                        <li class="p-5 hover:bg-gray-500 rounded-lg"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"/></g></svg></a></li>
+                    </ul>
+                    <ul class="flex flex-wrap gap-4">
+                        <li class="flex items-center">
+                            <a href="#" class="flex items-center hover:bg-gray-500 rounded-lg p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0-20M2 12h20"/>
+                                    </g>
+                                </svg>
+                                <span class="ml-2">English(International)</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="#" class="flex items-center hover:bg-gray-500 rounded-lg p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20">
+                                    <path fill="white" fill-rule="evenodd" d="M5.05 4.05a7 7 0 1 1 9.9 9.9L10 18.9l-4.95-4.95a7 7 0 0 1 0-9.9M10 11a2 2 0 1 0 0-4a2 2 0 0 0 0 4" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="ml-2">San Francisco Bay Area</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-wrap justify-center md:justify-between items-center">
+                <div class="flex gap-4">
+                    <a href="#"><img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg" alt="Download di Android" class="h-10"></a>
+                    <a href="#"><img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-apple-f1f919205b.svg" alt="Download di IOS" class="h-10"></a>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-wrap justify-between items-center text-gray-400 text-xs">
+                <div>© 2024 Uber Technologies Inc.</div>
+                <div class="flex space-x-4">
+                    <a href="https://fti.unai.edu/" class="hover:text-gray-700">FTI UNAI</a>
+                    <a href="https://unai.edu/" class="hover:text-gray-700">Unai Website</a>
+                    <a href="https://jurnal.unai.edu/index.php/teika" class="hover:text-gray-700">Jurnal Teika</a>
+                </div>
+            </div>
+        </div>
+    </footer>  
 </body>
 </html>
